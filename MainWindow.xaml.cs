@@ -40,7 +40,7 @@ namespace Szyfrowanie
                     continue;
                 }
 
-                for (int i = 0; i < Math.Abs(key); i++)
+                for (int i = 0; i < Math.Abs(key % letters.Length); i++)
                 {
                     if (key > 0)
                         charIndex++;
@@ -49,14 +49,14 @@ namespace Szyfrowanie
                 }
 
 
-                // Loop index when it is too big or small
-                while (charIndex < 0)
+                // Edit index when it is too big or small. Modulo makes it, so it's enough to do this once
+                if (charIndex < 0)
                     charIndex += letters.Length;
 
-                while (charIndex > letters.Length - 1)
+                if (charIndex > letters.Length - 1)
                     charIndex -= letters.Length;
 
-                // Check if an orginal char was in upper or lower case
+                // Check if an orginal char was in upper or lower case and back it to orginal state
                 if (char.ToLower(textChar) != textChar)
                     result += char.ToUpper(letters[charIndex]);
                 else
@@ -68,7 +68,7 @@ namespace Szyfrowanie
 
         private void Button_Click_Encrypt(object sender, RoutedEventArgs e)
         {
-            // Ensure that the key is a number
+            // Ensure that the key is a inteager number
             if (!int.TryParse(keyTxtBox.Text, out int key))
                 key = 0;
 

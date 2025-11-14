@@ -18,16 +18,16 @@
             <Label Foreground="AntiqueWhite" FontSize="20">Podaj wartość klucza</Label>
             <TextBox TextWrapping="Wrap" Name="keyTxtBox" Width="50" Margin="30"/>
             <Label Foreground="AntiqueWhite" FontSize="20">Podaj tekst</Label>
-            <TextBox Height="200"  Margin="20" AcceptsReturn="True" Name="textTxtBox"/>
+            <TextBox Height="250" Margin="20" AcceptsReturn="True" Name="textTxtBox" TextWrapping="Wrap"/>
         </StackPanel>
-        <Button Background="LightBlue" Click="Button_Click_Encrypt" Grid.Column="1" Margin="0 100 0 0" Content="Zaszyfruj" VerticalAlignment="Center" HorizontalAlignment="Center" />
+        <Button Padding="3" Background="LightBlue" Click="Button_Click_Encrypt" Grid.Column="1" Margin="0 100 0 0" Content="Zaszyfruj" VerticalAlignment="Center" HorizontalAlignment="Center" />
 
         <StackPanel Grid.Column="2">
-            <Label Foreground="AntiqueWhite" FontSize="20">Tekst Zaszyfrowany</Label>
+            <Label Foreground="AntiqueWhite" FontSize="20">Tekst zaszyfrowany</Label>
             <Border BorderBrush="AntiqueWhite" Height="300" BorderThickness="3" CornerRadius="20" Margin="30">
-                <TextBlock Foreground="White" Margin="20" Name="resultTxtBlock"/>
+                <TextBlock Foreground="White" Margin="20" Name="resultTxtBlock" TextWrapping="Wrap"/>
             </Border>
-            <Button Background="LightBlue" Click="Button_Click_Save" Content="Zapisz szyfr w pliku" Height="auto" VerticalAlignment="Center" Padding="30 2 30 2" HorizontalAlignment="Center" />
+            <Button Background="LightBlue" Click="Button_Click_Save" Content="Zapisz szyfr w pliku" Height="auto" VerticalAlignment="Center" Padding="30 3" HorizontalAlignment="Center" />
 
         </StackPanel>
     </Grid>

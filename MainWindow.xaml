@@ -5,8 +5,30 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Szyfrowanie"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Szyfrowanie. Wykonane przez Wiktor Lutowski" Height="500" Width="800"
+        Background="CadetBlue">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel>
+            <Label Foreground="AntiqueWhite" FontSize="20">Podaj wartość klucza</Label>
+            <TextBox TextWrapping="Wrap" Name="keyTxtBox" Width="50" Margin="30"/>
+            <Label Foreground="AntiqueWhite" FontSize="20">Podaj tekst</Label>
+            <TextBox Height="200"  Margin="20" AcceptsReturn="True" Name="textTxtBox"/>
+        </StackPanel>
+        <Button Background="LightBlue" Click="Button_Click_Encrypt" Grid.Column="1" Margin="0 100 0 0" Content="Zaszyfruj" VerticalAlignment="Center" HorizontalAlignment="Center" />
+
+        <StackPanel Grid.Column="2">
+            <Label Foreground="AntiqueWhite" FontSize="20">Tekst Zaszyfrowany</Label>
+            <Border BorderBrush="AntiqueWhite" Height="300" BorderThickness="3" CornerRadius="20" Margin="30">
+                <TextBlock Foreground="White" Margin="20" Name="resultTxtBlock"/>
+            </Border>
+            <Button Background="LightBlue" Click="Button_Click_Save" Content="Zapisz szyfr w pliku" Height="auto" VerticalAlignment="Center" Padding="30 2 30 2" HorizontalAlignment="Center" />
+
+        </StackPanel>
     </Grid>
 </Window>
